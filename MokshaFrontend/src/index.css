@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500;1,600&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-sand: #f7f2ea;
+  --color-cream: #ede7da;
+  --color-charcoal: #26211c;
+  --color-charcoal-60: rgba(38, 33, 28, 0.6);
+  --color-olive: #6b7a53;
+  --color-olive-light: #8a9a6a;
+  --color-taupe: #9a8a76;
+  --color-hairline: rgba(38, 33, 28, 0.12);
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-serif: 'Lora', Georgia, serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f7f2ea;
+  color: #26211c;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 0; }
+
+/* Pill nav link style */
+.nav-pill-link {
+  position: relative;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: inherit;
+  padding: 0.25rem 0;
+  transition: opacity 0.2s ease;
+}
+.nav-pill-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+.nav-pill-link:hover::after { width: 100%; }
+.nav-pill-link:hover { opacity: 0.7; }
+
+/* Hero headline font mix */
+.headline-sans {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.headline-serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Separator slash */
+.headline-slash {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  opacity: 0.4;
+  margin: 0 0.4em;
+}
+
+/* Marquee */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: inline-block;
+  animation: marquee-scroll 32s linear infinite;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

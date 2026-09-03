@@ -1,0 +1,10 @@
+{
+  "description": "This yoga studio website offers a serene and engaging experience for users to explore services, book classes, and connect with a community focused on wellness.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
